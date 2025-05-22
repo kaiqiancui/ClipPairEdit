@@ -1,0 +1,100 @@
+- target: male white person with elf ears
+  positive: male white person with elf ears
+  unconditional: male white person with elf ears
+  neutral: male white person with elf ears
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male black person with elf ears
+  positive: male black person with elf ears
+  unconditional: male black person with elf ears
+  neutral: male black person with elf ears
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male indian person with elf ears
+  positive: male indian person with elf ears
+  unconditional: male indian person with elf ears
+  neutral: male indian person with elf ears
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male asian person with elf ears
+  positive: male asian person with elf ears
+  unconditional: male asian person with elf ears
+  neutral: male asian person with elf ears
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male hispanic person with elf ears
+  positive: male hispanic person with elf ears
+  unconditional: male hispanic person with elf ears
+  neutral: male hispanic person with elf ears
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female white person with elf ears
+  positive: female white person with elf ears
+  unconditional: female white person with elf ears
+  neutral: female white person with elf ears
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female black person with elf ears
+  positive: female black person with elf ears
+  unconditional: female black person with elf ears
+  neutral: female black person with elf ears
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female indian person with elf ears
+  positive: female indian person with elf ears
+  unconditional: female indian person with elf ears
+  neutral: female indian person with elf ears
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female asian person with elf ears
+  positive: female asian person with elf ears
+  unconditional: female asian person with elf ears
+  neutral: female asian person with elf ears
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female hispanic person with elf ears
+  positive: female hispanic person with elf ears
+  unconditional: female hispanic person with elf ears
+  neutral: female hispanic person with elf ears
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1

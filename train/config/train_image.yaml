@@ -1,0 +1,62 @@
+device: 3
+pretrained_model_name_or_path: "/disks/sata5/public/FLUX.1-dev"
+
+python_name: train_image
+
+datasets_folder: datasets
+datasets:
+  - age
+  # - eye
+  # - smile
+  # - elf
+  # - man
+  # - pixel
+  # - dog_style
+
+source_folder: source
+target_folder: target
+
+config_name: base
+
+start_step: 0
+end_step: 27
+num_inference_steps: 28
+guidance_scale: 3.5
+
+cfg_eta: 4
+noise_scales: 
+  - 1
+  # - 0.8
+  # - 2
+  # - 3
+
+train_iteration: 500
+save_per_steps: 500
+train_start: 1
+train_count: 1
+train_method: full
+output_folder: "output/models/image/"
+
+# 生成部分
+use_trained_lora_path: 0 # 是否使用已经训练好的lora
+trained_lora_path: ""
+
+use_prompts_file: 0 # 1 使用prompts_file_gen来生成图片; 0 不使用prompts_file_gen, 使用prompt
+prompts_file: 
+  - prompts-person.yaml
+
+use_random_seed: 0 # 1 使用随机seed生成图片; 0 不使用随机seed,使用start_seed_gen顺序生成
+
+output_folder_gen: "output/eval/image/"
+
+prompt: 
+  - image of old person
+
+skips: 
+  - 2
+start_seed_gen: 7003
+
+# scales: 0,0.8,1,1.2,1.5,2
+scales: 0,0.2,0.4,0.6
+# scales: 0,0.3,0.5,0.7
+count_gen: 20

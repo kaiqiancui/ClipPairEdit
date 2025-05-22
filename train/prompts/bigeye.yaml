@@ -1,0 +1,100 @@
+- target: male white person with big eye
+  positive: male white person with big eye
+  unconditional: male white person with big eye
+  neutral: male white person with big eye
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male black person with big eye
+  positive: male black person with big eye
+  unconditional: male black person with big eye
+  neutral: male black person with big eye
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male indian person with big eye
+  positive: male indian person with big eye
+  unconditional: male indian person with big eye
+  neutral: male indian person with big eye
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male asian person with big eye
+  positive: male asian person with big eye
+  unconditional: male asian person with big eye
+  neutral: male asian person with big eye
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male hispanic person with big eye
+  positive: male hispanic person with big eye
+  unconditional: male hispanic person with big eye
+  neutral: male hispanic person with big eye
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female white person with big eye
+  positive: female white person with big eye
+  unconditional: female white person with big eye
+  neutral: female white person with big eye
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female black person with big eye
+  positive: female black person with big eye
+  unconditional: female black person with big eye
+  neutral: female black person with big eye
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female indian person with big eye
+  positive: female indian person with big eye
+  unconditional: female indian person with big eye
+  neutral: female indian person with big eye
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female asian person with big eye
+  positive: female asian person with big eye
+  unconditional: female asian person with big eye
+  neutral: female asian person with big eye
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female hispanic person with big eye
+  positive: female hispanic person with big eye
+  unconditional: female hispanic person with big eye
+  neutral: female hispanic person with big eye
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1

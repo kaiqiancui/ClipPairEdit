@@ -1,0 +1,171 @@
+# PyTorch / Model Checkpoints
+# 忽略所有 .pt 文件 (例如 PyTorch 模型权重)
+*.pt
+# 也可以忽略其他常见的模型文件格式，如果你的项目也可能用到它们
+*.pth
+*.h5
+*.keras
+*.ckpt
+*.onnx
+*.tflite
+
+# Python 一般忽略项
+###################
+# 字节码或编译文件
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib60/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+# Обычно создается PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IPython Notebook Checkpoints
+.ipynb_checkpoints
+
+# Jupyter Notebook
+# 忽略所有Jupyter Notebook的运行时文件
+.ipynb_checkpoints/
+# 如果你不想追踪 Notebook 输出，但想追踪代码，可以考虑使用 Jupytext 或 nbstripout
+# 并在这里忽略原始的 .ipynb 文件，或者只在特定情况下忽略。
+# 对于大多数科研项目，追踪 .ipynb (包含少量输出) 可能是可以接受的。
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Profiler output
+*.prof
+*.pstat
+
+# 科研项目特定忽略项
+#######################
+# 大型数据集 (示例，请根据你的实际数据目录调整或使用 Git LFS 管理)
+# data/raw_data/
+# data/processed_data/
+# *.csv  (如果CSV文件过大且不适合版本控制)
+# *.pkl  (如果pickle文件过大)
+# *.npy
+# *.npz
+
+# 日志文件
+# *.log
+# logs/
+# log/
+
+# 实验输出/结果目录 (示例，请根据你的实际目录调整)
+# results/
+# outputs/
+# experiment_outputs/
+# figures/  (如果图片很多且动态生成，且不适合版本控制)
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+*.temp
+
+# 操作系统和编辑器特定文件
+###########################
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+# IDEs / Editors
+# JetBrains (PyCharm, IntelliJ IDEA, etc.)
+.idea/
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Vim
+*.swp
+*.swo

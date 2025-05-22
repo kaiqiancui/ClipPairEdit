@@ -1,0 +1,30 @@
+- target: a cat, pixar style
+  positive: a cat, pixar style
+  unconditional: a cat, pixar style
+  neutral: a cat, pixar style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: a dog, pixar style
+  positive: a dog, pixar style
+  unconditional: a dog, pixar style
+  neutral: a dog, pixar style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: a tiger, pixar style
+  positive: a tiger, pixar style
+  unconditional: a tiger, pixar style
+  neutral: a tiger, pixar style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1

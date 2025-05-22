@@ -1,0 +1,100 @@
+- target: male white person, pixar style
+  positive: male white person, pixar style
+  unconditional: male white person, pixar style
+  neutral: male white person, pixar style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male black person, pixar style
+  positive: male black person, pixar style
+  unconditional: male black person, pixar style
+  neutral: male black person, pixar style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male indian person, pixar style
+  positive: male indian person, pixar style
+  unconditional: male indian person, pixar style
+  neutral: male indian person, pixar style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male asian person, pixar style
+  positive: male asian person, pixar style
+  unconditional: male asian person, pixar style
+  neutral: male asian person, pixar style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male hispanic person, pixar style
+  positive: male hispanic person, pixar style
+  unconditional: male hispanic person, pixar style
+  neutral: male hispanic person, pixar style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female white person, pixar style
+  positive: female white person, pixar style
+  unconditional: female white person, pixar style
+  neutral: female white person, pixar style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female black person, pixar style
+  positive: female black person, pixar style
+  unconditional: female black person, pixar style
+  neutral: female black person, pixar style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female indian person, pixar style
+  positive: female indian person, pixar style
+  unconditional: female indian person, pixar style
+  neutral: female indian person, pixar style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female asian person, pixar style
+  positive: female asian person, pixar style
+  unconditional: female asian person, pixar style
+  neutral: female asian person, pixar style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female hispanic person, pixar style
+  positive: female hispanic person, pixar style
+  unconditional: female hispanic person, pixar style
+  neutral: female hispanic person, pixar style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1

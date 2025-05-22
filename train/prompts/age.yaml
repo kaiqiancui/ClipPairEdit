@@ -1,0 +1,100 @@
+- target: male white old person
+  positive: male white old person
+  unconditional: male white old person
+  neutral: male white old person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male black old person
+  positive: male black old person
+  unconditional: male black old person
+  neutral: male black old person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male indian old person
+  positive: male indian old person
+  unconditional: male indian old person
+  neutral: male indian old person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male asian old person
+  positive: male asian old person
+  unconditional: male asian old person
+  neutral: male asian old person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male hispanic old person
+  positive: male hispanic old person
+  unconditional: male hispanic old person
+  neutral: male hispanic old person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female white old person
+  positive: female white old person
+  unconditional: female white old person
+  neutral: female white old person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female black old person
+  positive: female black old person
+  unconditional: female black old person
+  neutral: female black old person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female indian old person
+  positive: female indian old person
+  unconditional: female indian old person
+  neutral: female indian old person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female asian old person
+  positive: female asian old person
+  unconditional: female asian old person
+  neutral: female asian old person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female hispanic old person
+  positive: female hispanic old person
+  unconditional: female hispanic old person
+  neutral: female hispanic old person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1

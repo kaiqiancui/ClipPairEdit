@@ -1,0 +1,100 @@
+- target: male white chubby person
+  positive: male white chubby person
+  unconditional: male white chubby person
+  neutral: male white chubby person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male black chubby person
+  positive: male black chubby person
+  unconditional: male black chubby person
+  neutral: male black chubby person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male indian chubby person
+  positive: male indian chubby person
+  unconditional: male indian chubby person
+  neutral: male indian chubby person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male asian chubby person
+  positive: male asian chubby person
+  unconditional: male asian chubby person
+  neutral: male asian chubby person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male hispanic chubby person
+  positive: male hispanic chubby person
+  unconditional: male hispanic chubby person
+  neutral: male hispanic chubby person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female white chubby person
+  positive: female white chubby person
+  unconditional: female white chubby person
+  neutral: female white chubby person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female black chubby person
+  positive: female black chubby person
+  unconditional: female black chubby person
+  neutral: female black chubby person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female indian chubby person
+  positive: female indian chubby person
+  unconditional: female indian chubby person
+  neutral: female indian chubby person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female asian chubby person
+  positive: female asian chubby person
+  unconditional: female asian chubby person
+  neutral: female asian chubby person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female hispanic chubby person
+  positive: female hispanic chubby person
+  unconditional: female hispanic chubby person
+  neutral: female hispanic chubby person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1

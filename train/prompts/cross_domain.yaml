@@ -1,0 +1,30 @@
+- target: a cat
+  positive: a cat
+  unconditional: a cat
+  neutral: a cat
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: a dog
+  positive: a dog
+  unconditional: a dog
+  neutral: a dog
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: a tiger
+  positive: a tiger
+  unconditional: a tiger
+  neutral: a tiger
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1

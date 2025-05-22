@@ -1,0 +1,100 @@
+- target: male white person with beard
+  positive: male white person with beard
+  unconditional: male white person with beard
+  neutral: male white person with beard
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male black person with beard
+  positive: male black person with beard
+  unconditional: male black person with beard
+  neutral: male black person with beard
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male indian person with beard
+  positive: male indian person with beard
+  unconditional: male indian person with beard
+  neutral: male indian person with beard
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male asian person with beard
+  positive: male asian person with beard
+  unconditional: male asian person with beard
+  neutral: male asian person with beard
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male hispanic person with beard
+  positive: male hispanic person with beard
+  unconditional: male hispanic person with beard
+  neutral: male hispanic person with beard
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female white person with beard
+  positive: female white person with beard
+  unconditional: female white person with beard
+  neutral: female white person with beard
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female black person with beard
+  positive: female black person with beard
+  unconditional: female black person with beard
+  neutral: female black person with beard
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female indian person with beard
+  positive: female indian person with beard
+  unconditional: female indian person with beard
+  neutral: female indian person with beard
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female asian person with beard
+  positive: female asian person with beard
+  unconditional: female asian person with beard
+  neutral: female asian person with beard
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female hispanic person with beard
+  positive: female hispanic person with beard
+  unconditional: female hispanic person with beard
+  neutral: female hispanic person with beard
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1

@@ -1,0 +1,100 @@
+- target: male white person with lipstick
+  positive: male white person with lipstick
+  unconditional: male white person with lipstick
+  neutral: male white person with lipstick
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male black person with lipstick
+  positive: male black person with lipstick
+  unconditional: male black person with lipstick
+  neutral: male black person with lipstick
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male indian person with lipstick
+  positive: male indian person with lipstick
+  unconditional: male indian person with lipstick
+  neutral: male indian person with lipstick
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male asian person with lipstick
+  positive: male asian person with lipstick
+  unconditional: male asian person with lipstick
+  neutral: male asian person with lipstick
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male hispanic person with lipstick
+  positive: male hispanic person with lipstick
+  unconditional: male hispanic person with lipstick
+  neutral: male hispanic person with lipstick
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female white person with lipstick
+  positive: female white person with lipstick
+  unconditional: female white person with lipstick
+  neutral: female white person with lipstick
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female black person with lipstick
+  positive: female black person with lipstick
+  unconditional: female black person with lipstick
+  neutral: female black person with lipstick
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female indian person with lipstick
+  positive: female indian person with lipstick
+  unconditional: female indian person with lipstick
+  neutral: female indian person with lipstick
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female asian person with lipstick
+  positive: female asian person with lipstick
+  unconditional: female asian person with lipstick
+  neutral: female asian person with lipstick
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female hispanic person with lipstick
+  positive: female hispanic person with lipstick
+  unconditional: female hispanic person with lipstick
+  neutral: female hispanic person with lipstick
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1

@@ -1,0 +1,100 @@
+- target: male white smiling person
+  positive: male white smiling person
+  unconditional: male white smiling person
+  neutral: male white smiling person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male black smiling person
+  positive: male black smiling person
+  unconditional: male black smiling person
+  neutral: male black smiling person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male indian smiling person
+  positive: male indian smiling person
+  unconditional: male indian smiling person
+  neutral: male indian smiling person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male asian smiling person
+  positive: male asian smiling person
+  unconditional: male asian smiling person
+  neutral: male asian smiling person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male hispanic smiling person
+  positive: male hispanic smiling person
+  unconditional: male hispanic smiling person
+  neutral: male hispanic smiling person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female white smiling person
+  positive: female white smiling person
+  unconditional: female white smiling person
+  neutral: female white smiling person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female black smiling person
+  positive: female black smiling person
+  unconditional: female black smiling person
+  neutral: female black smiling person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female indian smiling person
+  positive: female indian smiling person
+  unconditional: female indian smiling person
+  neutral: female indian smiling person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female asian smiling person
+  positive: female asian smiling person
+  unconditional: female asian smiling person
+  neutral: female asian smiling person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female hispanic smiling person
+  positive: female hispanic smiling person
+  unconditional: female hispanic smiling person
+  neutral: female hispanic smiling person
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1

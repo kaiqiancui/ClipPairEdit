@@ -1,0 +1,100 @@
+- target: male white person with glasses
+  positive: male white person with glasses
+  unconditional: male white person with glasses
+  neutral: male white person with glasses
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male black person with glasses
+  positive: male black person with glasses
+  unconditional: male black person with glasses
+  neutral: male black person with glasses
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male indian person with glasses
+  positive: male indian person with glasses
+  unconditional: male indian person with glasses
+  neutral: male indian person with glasses
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male asian person with glasses
+  positive: male asian person with glasses
+  unconditional: male asian person with glasses
+  neutral: male asian person with glasses
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male hispanic person with glasses
+  positive: male hispanic person with glasses
+  unconditional: male hispanic person with glasses
+  neutral: male hispanic person with glasses
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female white person with glasses
+  positive: female white person with glasses
+  unconditional: female white person with glasses
+  neutral: female white person with glasses
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female black person with glasses
+  positive: female black person with glasses
+  unconditional: female black person with glasses
+  neutral: female black person with glasses
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female indian person with glasses
+  positive: female indian person with glasses
+  unconditional: female indian person with glasses
+  neutral: female indian person with glasses
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female asian person with glasses
+  positive: female asian person with glasses
+  unconditional: female asian person with glasses
+  neutral: female asian person with glasses
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female hispanic person with glasses
+  positive: female hispanic person with glasses
+  unconditional: female hispanic person with glasses
+  neutral: female hispanic person with glasses
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1

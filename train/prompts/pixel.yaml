@@ -1,0 +1,100 @@
+- target: male white person, pixel style
+  positive: male white person, pixel style
+  unconditional: male white person, pixel style
+  neutral: male white person, pixel style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male black person, pixel style
+  positive: male black person, pixel style
+  unconditional: male black person, pixel style
+  neutral: male black person, pixel style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male indian person, pixel style
+  positive: male indian person, pixel style
+  unconditional: male indian person, pixel style
+  neutral: male indian person, pixel style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male asian person, pixel style
+  positive: male asian person, pixel style
+  unconditional: male asian person, pixel style
+  neutral: male asian person, pixel style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: male hispanic person, pixel style
+  positive: male hispanic person, pixel style
+  unconditional: male hispanic person, pixel style
+  neutral: male hispanic person, pixel style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female white person, pixel style
+  positive: female white person, pixel style
+  unconditional: female white person, pixel style
+  neutral: female white person, pixel style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female black person, pixel style
+  positive: female black person, pixel style
+  unconditional: female black person, pixel style
+  neutral: female black person, pixel style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female indian person, pixel style
+  positive: female indian person, pixel style
+  unconditional: female indian person, pixel style
+  neutral: female indian person, pixel style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female asian person, pixel style
+  positive: female asian person, pixel style
+  unconditional: female asian person, pixel style
+  neutral: female asian person, pixel style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: female hispanic person, pixel style
+  positive: female hispanic person, pixel style
+  unconditional: female hispanic person, pixel style
+  neutral: female hispanic person, pixel style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1

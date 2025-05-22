@@ -1,0 +1,30 @@
+- target: a cat, pixel style
+  positive: a cat, pixel style
+  unconditional: a cat, pixel style
+  neutral: a cat, pixel style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: a dog, pixel style
+  positive: a dog, pixel style
+  unconditional: a dog, pixel style
+  neutral: a dog, pixel style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
+- target: a tiger, pixel style
+  positive: a tiger, pixel style
+  unconditional: a tiger, pixel style
+  neutral: a tiger, pixel style
+  guidance: 4
+  rank: 4
+  action: enhance
+  resolution: 512
+  dynamic_resolution: false
+  batch_size: 1
