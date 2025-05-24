@@ -1,4 +1,4 @@
-device: 3
+device: 1
 pretrained_model_name_or_path: "/disks/sata5/public/FLUX.1-dev"
 
 python_name: train_image
@@ -30,7 +30,7 @@ noise_scales:
   # - 2
   # - 3
 
-train_iteration: 500
+train_iteration: 499
 save_per_steps: 500
 train_start: 1
 train_count: 1
@@ -50,7 +50,7 @@ use_random_seed: 0 # 1 使用随机seed生成图片; 0 不使用随机seed,使�
 output_folder_gen: "output/eval/image/"
 
 prompt: 
-  - image of old person
+  - image of person
 
 skips: 
   - 2

@@ -24,7 +24,7 @@ from torch.optim import AdamW
 from contextlib import ExitStack
 import random
 from utils.lora import LoRANetwork, DEFAULT_TARGET_REPLACE, UNET_TARGET_REPLACE_MODULE_CONV
-from transformers import loggings
+from transformers import logging
 logging.set_verbosity_warning()
 from diffusers import logging
 logging.set_verbosity_error()
@@ -578,20 +578,37 @@ for epoch in range(max_train_steps):
         for param in lora.parameters():
             param.requires_grad = True
 
-    if (epoch) % save_per_steps == 0 and epoch != 0:
-        # Save the trained LoRA model
-        save_path = f'{output_dir}'
-        os.makedirs(save_path, exist_ok=True)
+    # if (epoch) % save_per_steps == 0 and epoch != 0:
+    #     # Save the trained LoRA model
+    #     save_path = f'{output_dir}'
+    #     os.makedirs(save_path, exist_ok=True)
 
-        print("Saving...")
-        output_weight = f"{save_path}/{dataset}_{cfg_eta:.1f}eta_{noise_scale:.1f}ns_{num_inference_steps}inf_{epoch}epoch_0.pt"
-        network_content.save_weights(
-            output_weight,
-            dtype=weight_dtype,
-        )
-        network_semantic.save_weights(
-            f"{save_path}/{dataset}_{cfg_eta:.1f}eta_{noise_scale:.1f}ns_{num_inference_steps}inf_{epoch}epoch.pt",
-            dtype=weight_dtype,
-        )
-    
+    #     print("Saving...")
+    #     output_weight = f"{save_path}/{dataset}_{cfg_eta:.1f}eta_{noise_scale:.1f}ns_{num_inference_steps}inf_{epoch}epoch_0.pt"
+    #     network_content.save_weights(
+    #         output_weight,
+    #         dtype=weight_dtype,
+    #     )
+    #     network_semantic.save_weights(
+    #         f"{save_path}/{dataset}_{cfg_eta:.1f}eta_{noise_scale:.1f}ns_{num_inference_steps}inf_{epoch}epoch.pt",
+    #         dtype=weight_dtype,
+    #     )
+
+
+# Save the trained LoRA model
+save_path = f'{output_dir}'
+os.makedirs(save_path, exist_ok=True)
+
+print("Saving...")
+output_weight = f"{save_path}/{dataset}_{cfg_eta:.1f}eta_{noise_scale:.1f}ns_{num_inference_steps}inf_{epoch}epoch_0.pt"
+network_content.save_weights(
+    output_weight,
+    dtype=weight_dtype,
+)
+network_semantic.save_weights(
+    f"{save_path}/{dataset}_{cfg_eta:.1f}eta_{noise_scale:.1f}ns_{num_inference_steps}inf_{epoch}epoch.pt",
+    dtype=weight_dtype,
+)
+
+  
 print('Training Done')
