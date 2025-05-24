@@ -24,7 +24,7 @@ from torch.optim import AdamW
 from contextlib import ExitStack
 import random
 from utils.lora import LoRANetwork, DEFAULT_TARGET_REPLACE, UNET_TARGET_REPLACE_MODULE_CONV
-from transformers import logging
+from transformers import loggings
 logging.set_verbosity_warning()
 from diffusers import logging
 logging.set_verbosity_error()
@@ -111,7 +111,7 @@ batchsize = 1
 
 
 
-#! 
+#! 这里的clip_loss_weight是CLIP loss的权重 
 clip_loss_weight = 0.5
 def flush():
     torch.cuda.empty_cache()
@@ -145,6 +145,7 @@ clip_model = CLIPModel.from_pretrained(clip_model_name, torch_dtype=weight_dtype
 clip_model.requires_grad_(False) # 冻结CLIP模型参数
 clip_model.eval() # 设置CLIP模型为评估模式
 
+
 # We only train the additional adapter LoRA layers
 transformer.requires_grad_(False)
 vae.requires_grad_(False)
@@ -164,7 +165,7 @@ prompt_embeds_arr = []
 pooled_prompt_embeds_arr = []
 text_ids_arr = []
 
-
+# 计算空文本的嵌入作为目标嵌入
 prompt_embeds, pooled_prompt_embeds, text_ids = compute_text_embeddings(
     [""], text_encoders, tokenizers, max_sequence_length
 )
@@ -178,6 +179,7 @@ params = []
 modules = DEFAULT_TARGET_REPLACE
 modules += UNET_TARGET_REPLACE_MODULE_CONV
 
+# 两个lora
 network_content = LoRANetwork(
     transformer,
     rank=rank,
@@ -193,6 +195,8 @@ network_semantic = LoRANetwork(
     alpha=alpha,
     train_method=train_method,
 ).to(device, dtype=weight_dtype)
+
+# 将两个lora添加到参数列表
 params.extend(network_content.prepare_optimizer_params() + network_semantic.prepare_optimizer_params())
     
 optimizer = AdamW(params, lr=lr)
@@ -208,9 +212,11 @@ pipe = FluxPipeline(noise_scheduler,
     tokenizer_two,
     transformer,
 )
+
+# 进度条
 pipe.set_progress_bar_config(disable=False)
 
-
+# 学习率调度
 lr_warmup_steps = 200
 lr_num_cycles = 1
 lr_power = 1.0
@@ -244,9 +250,13 @@ vae_scale_factor = 2 ** (len(vae.config.block_out_channels))
 height_model = 2 * (int(height) // pipe.vae_scale_factor)
 width_model = 2 * (int(width) // pipe.vae_scale_factor)
 
-
+# 均匀减小的噪声调度
 sigmas = np.linspace(1.0, 1 / num_inference_steps, num_inference_steps)
+
+# 图像展平之后的大小
 image_seq_len = 1024
+
+# 线性插值计算mu方便后续的timesteps计算（对于不同的seq_len适用）
 mu = calculate_shift(
     image_seq_len,
     pipe.scheduler.config.base_image_seq_len,
@@ -254,6 +264,8 @@ mu = calculate_shift(
     pipe.scheduler.config.base_shift,
     pipe.scheduler.config.max_shift,
 )
+
+# 计算时间步
 retrieve_timesteps(
     pipe.scheduler,
     num_inference_steps,
@@ -272,6 +284,19 @@ ims_targets = os.listdir(f'{target_folder}/')
 ims_targets = [im_ for im_ in ims_targets if '.png' in im_ or '.jpg' in im_ or '.jpeg' in im_ or '.webp' in im_]
 ims_targets = sorted(ims_targets)    
 
+#! clip的tensor操作
+
+clip_image_size = clip_processor.image_processor.size["shortest_edge"] # 通常是 224
+clip_mean = torch.tensor(clip_processor.image_processor.image_mean, device=device, dtype=weight_dtype).view(1, 3, 1, 1)
+clip_std = torch.tensor(clip_processor.image_processor.image_std, device=device, dtype=weight_dtype).view(1, 3, 1, 1)
+# 预处理方法
+from torchvision.transforms import Resize, Normalize, Compose, InterpolationMode, ToTensor
+transform_for_clip = Compose([
+    Resize((clip_image_size, clip_image_size), interpolation=InterpolationMode.BICUBIC, antialias=True),
+    Normalize(mean=clip_processor.image_processor.image_mean, std=clip_processor.image_processor.image_std)
+])
+
+
 for epoch in range(max_train_steps):
     # u = compute_density_for_timestep_sampling(
     #     weighting_scheme=weighting_scheme,
@@ -282,8 +307,10 @@ for epoch in range(max_train_steps):
     # )
     # indices = (u * noise_scheduler_copy.config.num_train_timesteps).long()
     
+    # 随机选择一个时间步
     timestep_to_infer = random.randint(start_step, end_step)
-    # print("timestep_to_infer:", timestep_to_infer)
+    
+    # 将时间步转换为张量
     timesteps = torch.tensor([noise_scheduler.timesteps[timestep_to_infer]]).to(device=device)
 
     with torch.no_grad():
@@ -294,15 +321,53 @@ for epoch in range(max_train_steps):
         
         seed = random.randint(0,2*15)
 
-        init_latents, denoised_latents, noise = pipe.add_noise_scale(img1, timestep_to_infer, torch.Generator().manual_seed(seed), noise_scale)
+        # 对img1加噪声， 获取初始潜在表示、噪声潜在表示和噪声
+        # add_nosie scale方法：
+
+        # def add_noise(self, image, step, generator):
+        #     vae = self.vae
+
+        #     height = 512
+        #     width = 512
+
+        #     height = 2 * (int(height) // self.vae_scale_factor)
+        #     width = 2 * (int(width) // self.vae_scale_factor)
+
+        #     batch_size = 1
+        #     num_channels_latents = self.transformer.config.in_channels // 4
+        #     shape = (batch_size, num_channels_latents, height, width)
+
+        #     device = vae.device
+        #     image = self.image_processor.preprocess(image)
+        #     image = image.to(device=device, dtype=vae.dtype)
+
+        #     init_latents = vae.encode(image).latent_dist.sample(None)
+        #     init_latents = vae.config.scaling_factor * (init_latents - self.vae.config.shift_factor)
+
+        #!    init_latents = self._pack_latents(init_latents, batch_size, num_channels_latents, height, width)
+
+        #     shape = init_latents.shape
+
+        #     noise = torch.randn(shape, generator=generator).to(device)
+
+        #     sigmas = self.scheduler.sigmas.to(device=device)
+
+        #     # add noise
+        #     init_latents_add_noise = init_latents + sigmas[step] * noise
+        #     # init_latents_add_noise = self.scheduler.scale_noise(init_latents, torch.tensor([self.scheduler.timesteps[step]], device=device), noise)
+            
+        #     return init_latents, init_latents_add_noise, noise
+        # 生成的这些变量，都是打包过的
+        init_latents, denoised_latents, noise = pipe.add_noise_rect(img1, timestep_to_infer, torch.Generator().manual_seed(seed))
         
         denoised_latents = denoised_latents.to(device, dtype=weight_dtype)
         noise = noise.to(device, dtype=weight_dtype)
 
-        init_latents2, denoised_latents2, noise2 = pipe.add_noise_scale(img2, timestep_to_infer, torch.Generator().manual_seed(seed), noise_scale)
+        init_latents2, denoised_latents2, noise2 = pipe.add_noise_rect(img2, timestep_to_infer, torch.Generator().manual_seed(seed))
         denoised_latents2 = denoised_latents2.to(device, dtype=weight_dtype)
         noise2 = noise2.to(device, dtype=weight_dtype)
 
+        
         denoised_latents_unpack = FluxPipeline._unpack_latents(
             denoised_latents,
             height=height,
@@ -332,6 +397,7 @@ for epoch in range(max_train_steps):
         )
 
     if epoch == 0:
+        # 在第一个epoch时，初始化模型的输入，输入的是加噪的img1的潜变量
         model_input = FluxPipeline._unpack_latents(
             denoised_latents,
             height=height,
@@ -368,10 +434,10 @@ for epoch in range(max_train_steps):
         guidance = None
 
     # network_content 用于学习原来的语义，比如说image of a person
-    network_content.set_lora_slider(1)
+    network_content.set_lora_slider(1) # 权重滑块，这里的意思是完全应用lora权重
     with ExitStack() as stack:
         stack.enter_context(network_content)
-
+        #? 在这里临时应用lora权重训练，退出这个部分之后会恢复原始状态?
         model_noise_pred_neg = transformer(
             hidden_states=denoised_latents,
             # YiYi notes: divide it by 1000 for now because we scale it by 1000 in the transforme rmodel (we should not keep it but I want to keep the inputs same for the model for testing)
@@ -384,7 +450,7 @@ for epoch in range(max_train_steps):
             return_dict=False,
         )[0]
 
-
+    # unpack
     model_pred_neg = FluxPipeline._unpack_latents(
         model_noise_pred_neg,
         height=int(model_input.shape[2] * vae_scale_factor / 2),
@@ -404,6 +470,7 @@ for epoch in range(max_train_steps):
         for param in lora.parameters():
             param.requires_grad = False
 
+    # 同样预测一个噪声
     with network_semantic:
         with network_content:
             model_noise_pred_pos = transformer(
@@ -431,134 +498,72 @@ for epoch in range(max_train_steps):
     
     clip_loss_value = torch.tensor(0.0).to(device, dtype = weight_dtype)
 
-    # 获取当前时间步
-    current_sigma = timesteps[0]
-    
-    # 计算预测的x0
-    x0_pred_unpacked = denoised_latents - current_sigma * model_noise_pred_pos
-    # print(f"x0_pred_unpacked shape: {x0_pred_unpacked.shape}") # 输出应为 torch.Size([1, 1024, 64])
-    # print(f"vae.config.block_out_channels length: {len(vae.config.block_out_channels)}") # 输出应为 4
-    # print(f"vae.config.latent_channels: {vae.config.latent_channels}") # 输出VAE的潜在通道数
-    
-    # 分析_unpack_latents函数的工作原理
-    # 从源代码来看，_unpack_latents函数的处理流程是：
-    # 1. 输入形状为[batch_size, num_patches, channels]
-    # 2. 将其重塑为[batch_size, height, width, channels//4, 2, 2]
-    # 3. 转置为[batch_size, channels//4, height, 2, width, 2]
-    # 4. 最后重塑为[batch_size, channels//4, height*2, width*2]
-    
-    # 根据错误信息，VAE期望的输入通道数为16，而我们的通道数是64
-    # 这表明我们需要将channels从64调整为16
-    
-    # 首先获取基本维度信息
-    batch_size, num_patches, channels = x0_pred_unpacked.shape
-    latent_height = int(math.sqrt(num_patches))
-    latent_width = latent_height
-    
-    # 打印详细的维度信息以便分析
-    # print(f"Original latent shape: {x0_pred_unpacked.shape}")
-    # print(f"Latent dimensions (H,W): ({latent_height}, {latent_width})")
-    
-    # 根据_unpack_latents函数的逻辑，我们需要将channels从64调整为16
-    # 在_unpack_latents中，它假设channels可以被分解为channels//4组，每组包含4个通道
-    # 所以我们需要将channels调整为可以被正确解包的形式
-    
-    # 将latents重塑为正确的形状
-    # 首先将[B, H*W, C]转换为[B, H, W, C]
-    reshaped = x0_pred_unpacked.reshape(batch_size, latent_height, latent_width, channels)
-    
-    # 根据错误信息，VAE期望的输入通道数为16
-    # 所以我们需要将channels从64调整为16
-    # 在VAE中，每个通道对应一个特征图，所以我们需要将通道数量减少
-    
-    # 计算需要的通道数
-    target_channels = 16  # VAE期望的输入通道数
-    
-    # 使用平均池化将通道数从64减少到16
-    # 我们将每4个连续的通道平均合并为1个通道
-    # 这样可以保留所有信息，只是以压缩的形式
-    channel_groups = channels // target_channels
-    
-    # 重塑为[B, H, W, target_channels, channel_groups]
-    grouped = reshaped.reshape(batch_size, latent_height, latent_width, target_channels, channel_groups)
-    
-    # 对每组通道进行平均，得到[B, H, W, target_channels]
-    averaged = grouped.mean(dim=4)
-    
-    # 转置为[B, target_channels, H, W]格式，这是VAE期望的输入格式
-    latents_for_vae = averaged.permute(0, 3, 1, 2)
-    
-    # print(f"Adjusted latents_for_vae shape: {latents_for_vae.shape}")
+    # 确保 current_sigma 是 PyTorch 张量，且 dtype 和 device 正确
+    current_sigma = timesteps[0].to(device=device, dtype=weight_dtype)
 
-    vae.eval()
-    # 使用调整后的latents进行数值调整
+    # 计算预测的x0 (依然是 Transformer 的原始输出形式，例如 [1, 1024, 64])
+    # denoised_latents 在此处已经是 [1, 1024, 64] 形式，与 model_noise_pred_pos 兼容。
+    x0_pred_unpacked = denoised_latents - current_sigma * model_noise_pred_pos
+    
+    #! 重新打包
+    latents_for_vae = FluxPipeline._unpack_latents(
+        latents=x0_pred_unpacked,
+        height=height, # Your target image height, e.g., 512
+        width=width,   # Your target image width, e.g., 512
+        vae_scale_factor=vae_scale_factor # The VAE scale factor, e.g., 16
+    )
+
+    
+    vae.eval() # 保持 VAE 在评估模式
+    
+    # 使用调整后的latents进行数值调整，并确保数据类型和设备正确
     latents_to_decode = latents_for_vae / vae.config.scaling_factor
-    # print(f"Final latents_to_decode shape: {latents_to_decode.shape}")
-    # print(f"VAE scaling factor: {vae.config.scaling_factor}")
-    
-    
     latents_to_decode = latents_to_decode.to(dtype=pipe.vae.dtype, device=pipe.vae.device)
 
-    # 解码
-    with torch.no_grad():
-        decoded_image_tensor = vae.decode(latents_to_decode).sample
-        
-    # 目标：将图像张量 [-1, 1] 转换为 PIL 图像
-    # 首先：将范围从 [-1, 1] 归一化到 [0, 1]
+    # 解码（梯度流经 VAE 解码器）
+    decoded_image_tensor = vae.decode(latents_to_decode).sample
+    
+    # 目标：将图像张量 [-1, 1] 归一化到 [0, 1]
     decoded_image_tensor = (decoded_image_tensor / 2 + 0.5).clamp(0, 1)
     
-    # 手动转化到PIL
-    pil_images = []
+    # #! CLIP 的张量操作
+    # 预测图像的 CLIP 预处理（使用预定义的 transform_for_clip）
+    # decoded_image_tensor 是 [B, 3, H, W]，值在 [0, 1] 范围内
+    clip_input_pred_img_tensor = transform_for_clip(decoded_image_tensor)
+
+    # 目标图像 img2 的 CLIP 预处理
+    # img2 是 PIL 图像，先转换为张量，再进行与预测图像相同的预处理
+    target_image_tensor_raw = ToTensor()(img2).unsqueeze(0).to(device, dtype=decoded_image_tensor.dtype)
+    clip_input_target_img_tensor = transform_for_clip(target_image_tensor_raw)
+
+    # 确保 clip_model 在 eval 模式且已冻结
+    clip_model.eval()
+    clip_model.requires_grad_(False) 
+
+    pred_img_features = clip_model.get_image_features(clip_input_pred_img_tensor)
     
-    for i in range(decoded_image_tensor.shape[0]): # 遍历批次中的每张图像
-        image_slice = decoded_image_tensor[i]
-        
-        # 先将BFloat16转换为float32，然后再转换为NumPy数组
-        # 解决“Got unsupported ScalarType BFloat16”错误
-        image_slice = image_slice.to(dtype=torch.float32)
-        
-        # 手动转换为 PIL 图像
-        image_np = image_slice.cpu().permute(1, 2, 0).numpy() # C, H, W -> H, W, C
-        image_np = (image_np * 255).round().astype("uint8")
-        
-        from PIL import Image
-        pil_img = Image.fromarray(image_np)
-        pil_images.append(pil_img)
-        
-    # 算clip loss
-    if pil_images:
-        decoded_pred_image_pil = pil_images[0] # 假设批处理大小为 1
-
-        # --- 后续的 CLIP 处理代码保持不变 ---
-        clip_input_target_img = clip_processor(
-            images=img2, return_tensors="pt"
-        ).pixel_values.to(device=device, dtype=clip_model.dtype)
-
-        clip_input_pred_img = clip_processor(
-            images=decoded_pred_image_pil, return_tensors="pt"
-        ).pixel_values.to(device=device, dtype=clip_model.dtype)
-
-        with torch.no_grad():
-            pred_img_features = clip_model.get_image_features(clip_input_pred_img)
-            target_img_features = clip_model.get_image_features(clip_input_target_img)
-            pred_img_features = pred_img_features / pred_img_features.norm(p=2, dim=-1, keepdim=True)
-            target_img_features = target_img_features / target_img_features.norm(p=2, dim=-1, keepdim=True)
-        
-        similarity = torch.nn.functional.cosine_similarity(pred_img_features, target_img_features, dim=-1)
-        clip_loss_value = (1.0 - similarity).mean()     
-        
-    total_loss_for_semantic = loss2 + clip_loss_weight * clip_loss_value
-    total_loss_for_semantic.backward() # 在这里进行反向传播
+    with torch.no_grad(): 
+        target_img_features = clip_model.get_image_features(clip_input_target_img_tensor)
+    
+    # 归一化特征
+    pred_img_features = pred_img_features / pred_img_features.norm(p=2, dim=-1, keepdim=True)
+    target_img_features = target_img_features / target_img_features.norm(p=2, dim=-1, keepdim=True)
+    
+    # 计算余弦相似度损失
+    similarity = torch.nn.functional.cosine_similarity(pred_img_features, target_img_features, dim=-1)
+    clip_loss_value = (1.0 - similarity).mean()
+    
+    
+    total_loss_for_semantic = clip_loss_weight * clip_loss_value
+    
+    total_loss_for_semantic.backward() 
 
     logs = {
         "loss2": loss2.item(), 
-        "loss1": loss1.item(), # loss1 的计算应保持不变
+        "loss1": loss1.item(), 
         "clip_loss": clip_loss_value.item(), 
         "lr": lr_scheduler.get_last_lr()[0]
     }
-    
-    # writer.add_scalar(f'LoRA - {lora_name}_{version}_{init_cl_weight}cl -Concept', loss1.item(), epoch)
-
     
     optimizer.step()
     lr_scheduler.step()

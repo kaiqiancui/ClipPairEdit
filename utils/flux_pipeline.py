@@ -574,40 +574,6 @@ class FluxPipeline(DiffusionPipeline, FluxLoraLoaderMixin):
 
 
     @torch.no_grad()
-    def add_noise_scale(self, image, step, generator, scale):
-        vae = self.vae
-
-        height = 512
-        width = 512
-
-        height = 2 * (int(height) // self.vae_scale_factor)
-        width = 2 * (int(width) // self.vae_scale_factor)
-
-        batch_size = 1
-        num_channels_latents = self.transformer.config.in_channels // 4
-        shape = (batch_size, num_channels_latents, height, width)
-
-        device = vae.device
-        image = self.image_processor.preprocess(image)
-        image = image.to(device=device, dtype=vae.dtype)
-
-        init_latents = vae.encode(image).latent_dist.sample(None)
-        init_latents = vae.config.scaling_factor * (init_latents - self.vae.config.shift_factor)
-
-        init_latents = self._pack_latents(init_latents, batch_size, num_channels_latents, height, width)
-
-        shape = init_latents.shape
-
-        noise = torch.randn(shape, generator=generator).to(device)
-        noise = scale * noise
-
-        sigmas = self.scheduler.sigmas.to(device=device)
-
-        # add noise
-        init_latents_add_noise = init_latents + sigmas[step] * noise
-        # init_latents_add_noise = self.scheduler.scale_noise(init_latents, torch.tensor([self.scheduler.timesteps[step]], device=device), noise)
-        
-        return init_latents, init_latents_add_noise, noise
 
 
 
