@@ -1,0 +1,16 @@
+# 基本参数
+device: 1
+pretrained_model_name_or_path: "/disks/sata5/public/FLUX.1-dev"
+output_dir: "output/clip_sub_results"
+datasets_folder: "/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata"
+dataset: "0004"
+source_folder: "source"
+target_folder: "target"
+file_name: "0004.png"
+prompts: "a photo of a person"
+
+# # 可选参数
+# guidance_scale: 3.5
+# num_inference_steps: 28
+# height: 512
+# width: 512

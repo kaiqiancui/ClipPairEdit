@@ -112,7 +112,25 @@ batchsize = 1
 
 
 #! 这里的clip_loss_weight是CLIP loss的权重 
-clip_loss_weight = 0.5
+clip_loss_weight_init = 10
+clip_loss_final = 0.2 * clip_loss_weight_init
+
+
+loss2_weight_final = 0.06
+loss2_weight_init = 10 * loss2_weight_final
+
+
+def schedule_weight(step, total_steps, initial_val, final_val):
+    """Linearly interpolates a weight from an initial to a final value."""
+    if total_steps <= 1:
+        return initial_val
+    # Calculate the interpolation factor (from 0.0 to 1.0)
+    alpha = min(float(step) / float(total_steps - 1), 1.0)
+    # Apply the linear interpolation
+    return initial_val + (final_val - initial_val) * alpha
+
+
+
 def flush():
     torch.cuda.empty_cache()
     gc.collect()
@@ -549,19 +567,22 @@ for epoch in range(max_train_steps):
     pred_img_features = pred_img_features / pred_img_features.norm(p=2, dim=-1, keepdim=True)
     target_img_features = target_img_features / target_img_features.norm(p=2, dim=-1, keepdim=True)
     
+
     # 计算余弦相似度损失
     similarity = torch.nn.functional.cosine_similarity(pred_img_features, target_img_features, dim=-1)
     clip_loss_value = (1.0 - similarity).mean()
     
+    clip_loss_weight = schedule_weight(epoch, max_train_steps, clip_loss_weight_init, clip_loss_final)
+    loss2_weight = schedule_weight(epoch, max_train_steps, loss2_weight_init, loss2_weight_final)
     
-    total_loss_for_semantic = clip_loss_weight * clip_loss_value
+    total_loss_for_semantic = clip_loss_weight * clip_loss_value + loss2_weight * loss2
     
     total_loss_for_semantic.backward() 
 
     logs = {
         "loss2": loss2.item(), 
         "loss1": loss1.item(), 
-        "clip_loss": clip_loss_value.item(), 
+        "clip_loss": clip_loss_value.item(),
         "lr": lr_scheduler.get_last_lr()[0]
     }
     

@@ -1,0 +1,104 @@
+执行时间: 20250525122344
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="7001.png" --prompts="a photo of a person" --guidance_scale=3.5 --num_inference_steps=28 --height=512 --width=512 
+执行失败: 20250525122344, 错误代码 256
+
+执行时间: 20250525122428
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="7001.png" --prompts="a photo of a person" --guidance_scale=3.5 --num_inference_steps=28 --height=512 --width=512 
+执行失败: 20250525122428, 错误代码 512
+
+执行时间: 20250525122457
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="7001.png" --prompts="a photo of a person" 
+执行失败: 20250525122457, 错误代码 256
+
+执行时间: 20250525122623
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="7001.png" --prompts="a photo of a person" 
+执行失败: 20250525122623, 错误代码 256
+
+执行时间: 20250525122650
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="7001.png" --prompts="a photo of a person" 
+执行失败: 20250525122650, 错误代码 256
+
+执行时间: 20250525123534
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="0007.png" --prompts="a photo of a person" 
+执行失败: 20250525123534, 错误代码 2
+
+执行时间: 20250525123907
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="0007.png" --prompts="a photo of a person" 
+执行失败: 20250525123907, 错误代码 256
+
+执行时间: 20250525123953
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="0007.png" --prompts="a photo of a person" 
+执行失败: 20250525123953, 错误代码 256
+
+执行时间: 20250525124138
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="0007.png" --prompts="a photo of a person" 
+执行失败: 20250525124138, 错误代码 256
+
+执行时间: 20250525124204
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="0007.png" --prompts="a photo of a person" 
+执行失败: 20250525124204, 错误代码 256
+
+执行时间: 20250525124319
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="0007.png" --prompts="a photo of a person" 
+执行失败: 20250525124319, 错误代码 256
+
+执行时间: 20250525124411
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="0007.png" --prompts="a photo of a person" 
+执行失败: 20250525124411, 错误代码 256
+
+执行时间: 20250525161641
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="0007.png" --prompts="a photo of a person" 
+执行失败: 20250525161641, 错误代码 256
+
+执行时间: 20250525161822
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="0007.png" --prompts="a photo of a person" 
+执行完成: 20250525161822, 结果保存在 output/clip_sub_results/0007.png
+
+执行时间: 20250525162159
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="0007.png" --prompts="a photo of a person" 
+执行完成: 20250525162159, 结果保存在 output/clip_sub_results/0007.png
+
+执行时间: 20250525162338
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="0007.png" --prompts="a photo of a person" 
+执行完成: 20250525162338, 结果保存在 output/clip_sub_results/0007.png
+
+执行时间: 20250525162434
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="0007.png" --prompts="a photo of a person" 
+执行完成: 20250525162434, 结果保存在 output/clip_sub_results/0007.png
+
+执行时间: 20250525162835
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="0007.png" --prompts="a photo of a person" 
+执行完成: 20250525162835, 结果保存在 output/clip_sub_results/0007.png
+
+执行时间: 20250525163248
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0006" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0006/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0006/target" --file_name="0006.png" --prompts="a photo of a person" 
+执行完成: 20250525163248, 结果保存在 output/clip_sub_results/0006.png
+
+执行时间: 20250525163505
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="0007.png" --prompts="a photo of a person" 
+执行完成: 20250525163505, 结果保存在 output/clip_sub_results/0007.png
+
+执行时间: 20250525163742
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="0007.png" --prompts="a photo of a person" 
+执行失败: 20250525163742, 错误代码 2
+
+执行时间: 20250525165129
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="0007.png" --prompts="a photo of a person" 
+执行失败: 20250525165129, 错误代码 256
+
+执行时间: 20250525165153
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="0007.png" --prompts="a photo of a person" 
+执行完成: 20250525165153, 结果保存在 output/clip_sub_results/0007.png
+
+执行时间: 20250525165307
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0007" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0007/target" --file_name="0007.png" --prompts="a photo of a person" 
+执行完成: 20250525165307, 结果保存在 output/clip_sub_results/0007.png
+
+执行时间: 20250525165440
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0004" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0004/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0004/target" --file_name="0004.png" --prompts="a photo of a person" 
+执行完成: 20250525165440, 结果保存在 output/clip_sub_results/0004.png
+
+执行时间: 20250525165635
+命令: python sub_clip.py --device="1" --pretrained_model_name_or_path="/disks/sata5/public/FLUX.1-dev" --output_dir="output/clip_sub_results" --datasets_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata" --dataset="0004" --source_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0004/source" --target_folder="/disks/sata2/kaiqian/ClipPairEdit/train/datasets/newdata/0004/target" --file_name="0004.png" --prompts="a photo of a person" 
+执行完成: 20250525165635, 结果保存在 output/clip_sub_results/0004.png
+
